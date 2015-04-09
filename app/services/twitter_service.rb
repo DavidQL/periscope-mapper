@@ -25,16 +25,22 @@ class TwitterService
           if location
             coords = Geocoder.coordinates(location)
             puts "#{location} (#{coords}): #{periscope_url}"
+            self.save_broadcast(location, coords, periscope_url)
           end            
 
         rescue Exception => e
           puts "exception inside tweet parsing"
         end   
       end
-    rescue Exception => e 
-      puts 'exception in do_poll'
+    rescue Twitter::Error::TooManyRequests
+      puts 'exception: too many requests'
       self.do_poll(client)
     end
+  end
+
+  def self.save_broadcast(location, coords, url)
+    binding.pry
+    Broadcast.create(location: location, url: url, lat: coords[0], lon: coords[1])
   end
 end
 

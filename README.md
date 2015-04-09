@@ -1,5 +1,6 @@
 ### README
 
-#### Todo: 
+#### Steps to run locally
 
-* Use Bing as geocoder backend: https://github.com/alexreisner/geocoder (50,000 requests per 24 hrs)
+1. Start MongoDB: `sudo mongod`
+2. Start polling: `TwitterService.start_polling`
