@@ -5,4 +5,10 @@ $(document).ready(function() {
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"),
     mapOptions);
+
+  var channel = new HydnaChannel('periscopemapper.hydna.net', 'r');
+
+  channel.onmessage = function(event) {
+    console.log(event.data);
+  };
 });

@@ -38,6 +38,8 @@ gem 'nokogiri'
 gem 'geocoder'
 gem "mongoid", "~> 4.0.0"
 gem "sse-rails"
+gem "puma"
+gem "hydna"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

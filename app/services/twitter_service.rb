@@ -26,6 +26,7 @@ class TwitterService
             coords = Geocoder.coordinates(location)
             puts "#{location} (#{coords}): #{periscope_url}"
             self.save_broadcast(location, coords, periscope_url)
+            Broadcast.notify_broadcast_added(location, coords, periscope_url)
           end            
 
         rescue Exception => e
@@ -39,7 +40,6 @@ class TwitterService
   end
 
   def self.save_broadcast(location, coords, url)
-    binding.pry
     Broadcast.create(location: location, url: url, lat: coords[0], lon: coords[1])
   end
 end
