@@ -1,4 +1,6 @@
-require 'hydna'
+require 'pubnub'
+
+
 
 class Broadcast
   include Mongoid::Document
@@ -8,15 +10,18 @@ class Broadcast
   field :lon, type: BigDecimal
 
   def self.notify_broadcast_added(location, coords, periscope_url)
-    begin
-      Hydna.push("periscopemapper.hydna.net", {
+    pubnub = Pubnub.new(
+      :publish_key   => ENV['PUBNUB_PUBLISH_KEY'],
+      :subscribe_key => ENV['PUBNUB_SUBSCRIBE_KEY']
+    )
+    pubnub.publish(
+      :channel  => 'broadcast_added',
+      :message => {
         location: location,
-        coord: coords,
+        coords: coords,
         periscope_url: periscope_url
-      }.to_json)
-    rescue Exception => e
-      puts e.message
-    end
+      }.to_json,
+    ) { |data| puts data.response }
   end
 end
 
