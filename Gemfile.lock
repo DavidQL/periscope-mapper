@@ -72,7 +72,6 @@ GEM
     http (0.6.4)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
-    hydna (0.1.10)
     i18n (0.7.0)
     jbuilder (2.2.12)
       activesupport (>= 3.0.0, < 5)
@@ -172,7 +171,6 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.10)
-    sse-rails (0.0.2)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -208,7 +206,6 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   dotenv-rails
   geocoder
-  hydna
   jbuilder (~> 2.0)
   jquery-rails
   mongoid (~> 4.0.0)
@@ -221,7 +218,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spring
   sqlite3
-  sse-rails
   turbolinks
   twitter
   uglifier (>= 1.3.0)

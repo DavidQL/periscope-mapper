@@ -37,9 +37,7 @@ gem 'twitter'
 gem 'nokogiri'
 gem 'geocoder'
 gem "mongoid", "~> 4.0.0"
-gem "sse-rails"
 gem "puma"
-gem "hydna"
 gem "pubnub"
 
 group :development, :test do

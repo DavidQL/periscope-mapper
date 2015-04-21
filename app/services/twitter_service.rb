@@ -43,4 +43,3 @@ class TwitterService
     Broadcast.create(location: location, url: url, lat: coords[0], lon: coords[1])
   end
 end
-

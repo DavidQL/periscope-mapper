@@ -11,4 +11,5 @@
 // about supported directives.
 //
 //= require jquery
+//= require pubnub-3.7.1.min.js
 //= require_tree .

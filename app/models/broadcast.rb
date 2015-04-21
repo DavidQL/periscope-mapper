@@ -1,7 +1,5 @@
 require 'pubnub'
 
-
-
 class Broadcast
   include Mongoid::Document
   field :url, type: String
