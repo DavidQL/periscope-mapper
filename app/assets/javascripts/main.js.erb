@@ -19,8 +19,8 @@
 
   var subscribeToChannel = function() {
     var pubnub = PUBNUB.init({     
-      publish_key   : 'pub-c-3c0435e9-c157-4dee-bc87-ae68895b017c',                             
-      subscribe_key : 'sub-c-f5cb54c2-e466-11e4-9a1e-02ee2ddab7fe'
+      publish_key   : "<%= ENV['PUBNUB_PUBLISH_KEY'] %>",                             
+      subscribe_key : "<%= ENV['PUBNUB_SUBSCRIBE_KEY'] %>"
     });
 
     pubnub.subscribe({                                      
