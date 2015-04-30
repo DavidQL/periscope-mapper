@@ -30,7 +30,7 @@ class TwitterService
           end            
 
         rescue Exception => e
-          puts "exception inside tweet parsing"
+          puts "Malformed tweet exception, skipping..."
         end   
       end
     rescue Twitter::Error::TooManyRequests

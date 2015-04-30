@@ -22,6 +22,3 @@ class Broadcast
     ) { |data| puts data.response }
   end
 end
-
-
-
