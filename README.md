@@ -2,6 +2,10 @@
 
 This application plots live Periscope broadcasts on a map. It does this by using the Twitter streaming API to collect tweets that advertise a live Periscope broadcast, and then plot those tweets on a Google map. 
 
+Periscope does *not* expose their API, and the tweets advertising a Periscope broadcast are not geotagged. To get around this, I used Capybara to scrape a Periscope broadcast web page to capture the city and then geocoded that city with the Geocoder gem.
+
+That data is then passed off to the browser client over web sockets. 
+
 #### Requirements
 
 * Ruby 2.1.0
